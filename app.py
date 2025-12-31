@@ -36,7 +36,7 @@ def load_data():
             df_sku['cylinder'] = 0.0
 
         # Load Layer 1 Forecast (Center Level)
-        df_l1 = pd.read_csv('final_files\\forecast_engine_outputs\\v2_layer1_center_monthly_forecast.csv')
+        df_l1 = pd.read_csv('v2_layer1_center_monthly_forecast.csv')
         
         return df_sku, df_l1
     except FileNotFoundError:
