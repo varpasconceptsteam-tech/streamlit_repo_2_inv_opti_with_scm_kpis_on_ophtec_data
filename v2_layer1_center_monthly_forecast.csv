@@ -1,0 +1,3 @@
+center_id,month,forecast_mean,forecast_p2_5,forecast_p97_5,model_used,sparse_switch,nonzero_months_last18,cv_last18
+ELW,01-12-25,180,130.52,252.12,Prophet_Daily_Split85_15,FALSE,3,0
+OCNH,01-12-25,300,240.51,350.45,Prophet_Daily_Split85_15,FALSE,3,0
