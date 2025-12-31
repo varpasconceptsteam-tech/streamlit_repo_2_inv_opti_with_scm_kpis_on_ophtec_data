@@ -344,8 +344,8 @@ chart_data = df_final.groupby('diopter').agg({
 # Sort by Diopter (Ascending)
 chart_data = chart_data.sort_values('diopter').reset_index(drop=True)
 
-# Calculate "Usable Stock"
-chart_data['usable_stock'] = chart_data['current_stock'] - chart_data['excess_stock']
+# Calculate "Target Stock"
+chart_data['target_stock'] = chart_data['current_stock'] - chart_data['excess_stock']
 
 if not chart_data.empty:
     # --- DEFINE COLORS ---
@@ -369,13 +369,13 @@ if not chart_data.empty:
     )
 
     # --- ROW 1: INVENTORY BARS ---
-    # 1. Usable Stock (Green)
+    # 1. Target Stock (Green)
     fig.add_trace(go.Bar(
         x=chart_data['diopter'],
-        y=chart_data['usable_stock'],
-        name='Usable Stock',
+        y=chart_data['target_stock'],
+        name='Target Stock',
         marker_color='#00CC96',
-        hovertemplate='Diopter: %{x}<br>Usable: %{y}<extra></extra>'
+        hovertemplate='Diopter: %{x}<br>Target: %{y}<extra></extra>'
     ), row=1, col=1)
 
     # 2. Excess Stock (Red)
